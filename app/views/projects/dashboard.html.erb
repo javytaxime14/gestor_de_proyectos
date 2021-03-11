@@ -1,0 +1,25 @@
+<h1>Dashboard</h1>
+<ul class='filter_by'>
+    <li><a href="/?s=">Todos</a></li>
+    <li><a href="/?s=proposal">Agendado</a></li>
+    <li><a href="/?s=in_progress">En progreso</a></li>
+    <li><a href="/?s=finished">Finalizado</a></li>
+</ul>  
+<table class="table">
+    <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Fecha de inicio</th>
+        <th>Fecha de término</th>
+        <th>Estado</th>
+    </tr>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.name %></td>
+        <td><%= project.description %></td>
+        <td><%= project.start_on %></td>
+        <td><%= project.finish_on %></td>
+        <td><%= project.status %></td>
+      </tr>
+    <% end %>
+</table>
